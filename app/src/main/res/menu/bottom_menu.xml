@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_ic"
+        android:title="Anasayfa"></item>
+    <item
+        android:icon="@drawable/shop_ic"
+        android:id="@+id/shop"
+        android:title="market"></item>
+    <item
+        android:id="@+id/ayarlar"
+        android:icon="@drawable/ayar_ic"
+        android:title="Ayarlar"></item>
+</menu>
