@@ -75,16 +75,46 @@ public class ShopAdapter extends BaseAdapter {
         shop_info padisah = shopArrayList.get(i);
         padisahIsim.setText(padisah.getIsim());
         padisahSure.setText(padisah.get_bilgi());
+
+        myUser=myAuth.getCurrentUser();
+
+
+        myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").child("Counter").get().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) {
+                Log.e("firebase", "Error getting data", task.getException());
+            } else {
+                if (task.getResult().getValue() != null) {
+                     Counter = (int) task.getResult().getValue(Integer.class);
+
+                }
+            }
+        });
+
+
         sepet_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                myUser=myAuth.getCurrentUser();
 
 
                 myData.put(String.valueOf(Counter),padisah);
                 Counter++;
-                myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").setValue(myData).addOnCompleteListener(this_act, new OnCompleteListener<Void>() {
+                myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").updateChildren(myData).addOnCompleteListener(this_act, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(this_act,"Kayıt tamamlandı",Toast.LENGTH_SHORT).show();
+                            Log.d("TAG", "başarılı");
+                        }
+                        else{
+
+                            Toast.makeText(this_act,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+
+                myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").child("Counter").setValue(Counter).addOnCompleteListener(this_act, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){

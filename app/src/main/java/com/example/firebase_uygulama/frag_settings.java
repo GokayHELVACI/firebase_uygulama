@@ -1,5 +1,6 @@
 package com.example.firebase_uygulama;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -112,4 +113,7 @@ public class frag_settings extends Fragment {
 
         return view;
     }
+
+
+
 }

@@ -27,10 +27,9 @@ public class signin extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mail=findViewById(R.id.editTextTextEmailAddress_in);
-        pass=findViewById(R.id.editTextTextPassword_in);
-        auth = FirebaseAuth.getInstance();
-
+            mail = findViewById(R.id.editTextTextEmailAddress_in);
+            pass = findViewById(R.id.editTextTextPassword_in);
+            auth = FirebaseAuth.getInstance();
 
 
 

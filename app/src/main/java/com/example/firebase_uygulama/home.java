@@ -76,9 +76,17 @@ public class home extends AppCompatActivity {
         myReference= FirebaseDatabase.getInstance().getReference();
         myUser=myAuth.getCurrentUser();
         myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").removeValue();
+
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentCon,new frag_shop()).commit();
+        ShopAdapter.myData.clear();
+        ShopAdapter.Counter=0;
 
     }
+    public void cikis_yap(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent= new Intent(getApplicationContext(),start.class);
+        startActivity(intent);
 
+    }
 
 }
