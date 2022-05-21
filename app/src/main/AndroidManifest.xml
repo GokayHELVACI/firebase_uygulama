@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Firebase_uygulama">
         <activity
+            android:name=".order"
+            android:exported="false" />
+        <activity
             android:name=".home"
             android:exported="false" />
         <activity

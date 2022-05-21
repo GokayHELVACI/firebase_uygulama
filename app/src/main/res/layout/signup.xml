@@ -6,44 +6,72 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".signup">
+    tools:context=".signup"
+    android:background="@color/custom1"
+    >
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/resto"
+        android:layout_marginBottom="65dp"
+        ></ImageView>
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        android:hint="Adınızı giriniz" />
+        android:hint="  Adınızı giriniz"
+        android:drawableStart="@drawable/person_ic"
+        />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        android:hint="E-mail giriniz" />
+        android:hint="  E-mail giriniz"
+        android:drawableStart="@drawable/mail_ic"
+        />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        android:hint="Password giriniz" />
+        android:hint="  Password giriniz"
+        android:drawableStart="@drawable/lock_ic"
+        />
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/home_work_ic"
+        android:hint="  Adres giriniz" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:onClick="kayitol"
-        android:text="Kayıt ol" />
+        android:text="Kayıt ol"
+        android:layout_marginBottom="55dp"
+        />
 
 </LinearLayout>

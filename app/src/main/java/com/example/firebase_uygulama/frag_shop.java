@@ -1,5 +1,6 @@
 package com.example.firebase_uygulama;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.badge.BadgeUtils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -45,6 +48,8 @@ public class frag_shop extends Fragment {
     FirebaseUser myUser;
     DatabaseReference myReference;
     HashMap<String,Object> myData;
+
+    Button siparisBtn;
     public frag_shop() {
         // Required empty public constructor
     }
@@ -86,7 +91,16 @@ public class frag_shop extends Fragment {
         // Inflate the layout for this fragment
         Arrays.fill(Sepetim, "");
         View view = inflater.inflate(R.layout.fragment_frag_shop, container, false);
+        siparisBtn=view.findViewById(R.id.siparisbtn);
+        siparisBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getContext(),order.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.anim2,R.anim.anim3);
 
+            }
+        });
         ListView listemiz=(ListView) view.findViewById(R.id.list_sepet);
 
         myAuth=FirebaseAuth.getInstance();

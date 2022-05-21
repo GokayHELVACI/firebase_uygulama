@@ -7,38 +7,46 @@
     android:orientation="vertical"
     tools:context=".signin"
     android:gravity="center"
+    android:background="@color/custom1"
     >
+  <ImageView
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:src="@drawable/resto"></ImageView>
 
   <EditText
+
       android:id="@+id/editTextTextEmailAddress_in"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="60dp"
       android:ems="10"
       android:inputType="textEmailAddress"
-      android:hint="E-mail"
+      android:hint="  E-mail"
       android:padding="20dp"
-      android:layout_marginTop="10dp"
-
+      android:layout_marginTop="100dp"
+      android:layout_marginLeft="50dp"
+      android:layout_marginRight="50dp"
+      android:drawableStart="@drawable/person_ic"
       />
 
   <EditText
       android:id="@+id/editTextTextPassword_in"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="60dp"
       android:ems="10"
       android:inputType="textPassword"
-      android:hint="Password"
+      android:hint="  Password"
       android:padding="20dp"
       android:layout_marginTop="10dp"
-
+      android:layout_marginLeft="50dp"
+      android:layout_marginRight="50dp"
+      android:drawableStart="@drawable/lock_ic"
       />
 
   <Button
       android:id="@+id/button2"
-      android:layout_marginTop="10dp"
-      android:layout_marginLeft="50dp"
-      android:layout_marginRight="50dp"
-      android:layout_width="match_parent"
+      android:layout_marginTop="50dp"
+      android:layout_width="150dp"
       android:layout_height="wrap_content"
       android:text="Giriş yap"
       android:layout_marginBottom="100dp"

@@ -84,6 +84,7 @@ public class frag_settings extends Fragment {
 
         TextView t1= view.findViewById(R.id.ad);
         TextView t2= view.findViewById(R.id.mail);
+        TextView t3= view.findViewById(R.id.adres);
 
         myAuth=FirebaseAuth.getInstance();
         myReference= FirebaseDatabase.getInstance().getReference();
@@ -102,6 +103,8 @@ public class frag_settings extends Fragment {
                         t1.setText(myData.get("kullaniciAdi").toString());
 
                         t2.setText(myData.get("KullaniciEmail").toString());
+
+                        t3.setText(myData.get("KullaniciAdres").toString());
 
 
                     }

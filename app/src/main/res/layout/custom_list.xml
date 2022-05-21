@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="2dp"
-    android:background="@color/purple_200"
+    android:background="@color/custom1"
     android:padding="5dp">
 
     <ImageView
-        android:id="@+id/list_row_imageview_padisah"
+        android:id="@+id/list_row_imageview_shop"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:src="@color/purple_700" />
@@ -20,11 +20,11 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/list_row_textview_isim"
         android:layout_alignLeft="@+id/list_row_textview_isim"
-        android:layout_alignBottom="@+id/list_row_imageview_padisah"
+        android:layout_alignBottom="@+id/list_row_imageview_shop"
         android:layout_marginBottom="15dp"
         android:text="TextView"
-        android:textColor="?android:attr/colorPressedHighlight"
-        android:textSize="20sp" />
+        android:textColor="@color/black"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/list_row_textview_isim"
@@ -36,10 +36,11 @@
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="11dp"
-        android:layout_toRightOf="@+id/list_row_imageview_padisah"
+        android:layout_toRightOf="@+id/list_row_imageview_shop"
         android:text="TextView"
-        android:textColor="?android:attr/colorPressedHighlight"
-        android:textSize="30sp" />
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/sepet"
@@ -51,7 +52,7 @@
         android:layout_marginStart="111dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/list_row_imageview_padisah"
+        android:layout_toRightOf="@+id/list_row_imageview_shop"
         android:text="sepete ekle">
 
     </Button>

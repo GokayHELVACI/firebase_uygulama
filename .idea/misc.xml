@@ -5,15 +5,17 @@
       <map>
         <entry key="app/src/main/res/drawable/ayar_ic.xml" value="0.1385" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1385" />
+        <entry key="app/src/main/res/layout/action_bar_layout.xml" value="0.13055555555555556" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25708770751953125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_start.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_order.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.22147420247395833" />
+        <entry key="app/src/main/res/layout/activity_start.xml" value="0.1823455810546875" />
         <entry key="app/src/main/res/layout/custom_list.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_frag_home.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/fragment_frag_settings.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/fragment_frag_settings.xml" value="0.13490142822265622" />
         <entry key="app/src/main/res/layout/fragment_frag_shop.xml" value="0.15070648193359376" />
-        <entry key="app/src/main/res/layout/signup.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/signup.xml" value="0.1702138264973958" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2953125" />
       </map>
     </option>

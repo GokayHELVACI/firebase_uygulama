@@ -1,11 +1,14 @@
 package com.example.firebase_uygulama;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -25,11 +28,14 @@ public class home extends AppCompatActivity {
     frag_home frg_home=new frag_home();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
             super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowCustomEnabled(true);
 
+        LayoutInflater inflator = (LayoutInflater) this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflator.inflate(R.layout.action_bar_layout, null);
+
+        actionBar.setCustomView(v);
         if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
 
             setContentView(R.layout.activity_home);
@@ -86,6 +92,8 @@ public class home extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         Intent intent= new Intent(getApplicationContext(),start.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.anim0,R.anim.anim1);
+
 
     }
 

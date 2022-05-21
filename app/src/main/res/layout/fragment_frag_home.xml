@@ -3,14 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frag_home">
+    tools:context=".frag_home"
+
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
         <ListView
             android:id="@+id/list_shop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+
+            >
 
 
         </ListView>

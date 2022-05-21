@@ -1,11 +1,14 @@
 package com.example.firebase_uygulama;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,9 +26,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class signup extends AppCompatActivity {
-    EditText email,sifre,isim;
+    EditText email,sifre,isim,adres;
     Button btn;
-    String txt_email,txt_şifre,txt_isim;
+    String txt_email,txt_şifre,txt_isim,txt_adres;
 
     FirebaseAuth myAuth;
     FirebaseUser myUser;
@@ -35,15 +38,22 @@ public class signup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        LayoutInflater inflator = (LayoutInflater) this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflator.inflate(R.layout.action_bar_layout, null);
+        actionBar.setCustomView(v);
         setContentView(R.layout.signup);
         isim=findViewById(R.id.editTextTextPersonName);
         email=findViewById(R.id.editTextTextPersonName2);
         sifre=findViewById(R.id.editTextTextPersonName3);
+        adres=findViewById(R.id.editTextTextPersonName4);
 
 
         myAuth=FirebaseAuth.getInstance();
         myReference= FirebaseDatabase.getInstance().getReference();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -57,6 +67,7 @@ public class signup extends AppCompatActivity {
         txt_email=email.getText().toString();
         txt_şifre=sifre.getText().toString();
         txt_isim=isim.getText().toString();
+        txt_adres=adres.getText().toString();
 
         if(!TextUtils.isEmpty(txt_email) && !TextUtils.isEmpty(txt_şifre)){
             myAuth.createUserWithEmailAndPassword(txt_email,txt_şifre)
@@ -69,6 +80,7 @@ public class signup extends AppCompatActivity {
                         myData.put("kullaniciAdi",txt_isim);
                         myData.put("KullaniciEmail",txt_email);
                         myData.put("KullaniciSifre",txt_şifre);
+                        myData.put("KullaniciAdres",txt_adres);
                         myReference.child("Kullanicilar").child(myUser.getUid()).setValue(myData).addOnCompleteListener(signup.this, new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -76,6 +88,8 @@ public class signup extends AppCompatActivity {
                                     Toast.makeText(signup.this,"Kayıt tamamlandı",Toast.LENGTH_SHORT).show();
                                     Intent intent= new Intent(getApplicationContext(),home.class);
                                     startActivity(intent);
+                                    overridePendingTransition(R.anim.anim2,R.anim.anim3);
+
                                 }
                                 else{
                                     Toast.makeText(signup.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
@@ -98,6 +112,8 @@ public class signup extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                overridePendingTransition(R.anim.anim0,R.anim.anim1);
+
                 return true;
         }
 

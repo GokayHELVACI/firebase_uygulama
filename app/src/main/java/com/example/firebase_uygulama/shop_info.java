@@ -4,10 +4,12 @@ public class shop_info {
 
     private String isim;
     private String bilgi;
+    private String url;
 
-    public shop_info(String isim, String bilgi) {
+    public shop_info(String isim, String bilgi, String url) {
         this.isim = isim;
         this.bilgi = bilgi;
+        this.url = url;
     }
 
     public String getIsim() {
@@ -24,6 +26,14 @@ public class shop_info {
 
     public void set_bilgi(String bilgi) {
         this.bilgi = bilgi;
+    }
+
+    public String get_url() {
+        return url;
+    }
+
+    public void set_url(String url) {
+        this.url = url;
     }
 
 

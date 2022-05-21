@@ -7,9 +7,9 @@
     <item
         android:icon="@drawable/shop_ic"
         android:id="@+id/shop"
-        android:title="market"></item>
+        android:title="Sepetim"></item>
     <item
         android:id="@+id/ayarlar"
-        android:icon="@drawable/ayar_ic"
-        android:title="Ayarlar"></item>
+        android:icon="@drawable/person_ic"
+        android:title="Hesabım"></item>
 </menu>

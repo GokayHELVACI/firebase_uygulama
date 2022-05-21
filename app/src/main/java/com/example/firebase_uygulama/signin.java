@@ -1,11 +1,13 @@
 package com.example.firebase_uygulama;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -24,8 +26,16 @@ public class signin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowCustomEnabled(true);
+
+        LayoutInflater inflator = (LayoutInflater) this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflator.inflate(R.layout.action_bar_layout, null);
+        actionBar.setCustomView(v);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_signin);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             mail = findViewById(R.id.editTextTextEmailAddress_in);
             pass = findViewById(R.id.editTextTextPassword_in);
@@ -46,6 +56,8 @@ public class signin extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     Intent intent = new Intent(getApplicationContext(), home.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.anim2,R.anim.anim3);
+
                 }
 
             }
@@ -60,6 +72,8 @@ public class signin extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                overridePendingTransition(R.anim.anim0,R.anim.anim1);
+
                 return true;
         }
 

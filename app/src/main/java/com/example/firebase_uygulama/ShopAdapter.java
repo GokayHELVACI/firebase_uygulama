@@ -39,10 +39,10 @@ public class ShopAdapter extends BaseAdapter {
 
     static int Counter=0;
 
-    public ShopAdapter(Activity activity, ArrayList<shop_info> padisahArrayList) {
+    public ShopAdapter(Activity activity, ArrayList<shop_info> shoparrayList) {
 
         this.mInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.shopArrayList = padisahArrayList;
+        this.shopArrayList = shoparrayList;
         this.this_act=activity;
     }
 
@@ -68,13 +68,13 @@ public class ShopAdapter extends BaseAdapter {
         myReference= FirebaseDatabase.getInstance().getReference();
 
         view = mInflater.inflate(R.layout.custom_list, null);
-        TextView padisahIsim = (TextView) view.findViewById(R.id.list_row_textview_isim);
-        TextView padisahSure = (TextView) view.findViewById(R.id.list_row_textview_sure);
-        ImageView padisaImage = (ImageView) view.findViewById(R.id.list_row_imageview_padisah);
+        TextView shopIsim = (TextView) view.findViewById(R.id.list_row_textview_isim);
+        TextView shopUcret = (TextView) view.findViewById(R.id.list_row_textview_sure);
+        ImageView shopImage = (ImageView) view.findViewById(R.id.list_row_imageview_shop);
         Button sepet_btn = (Button) view.findViewById(R.id.sepet);
-        shop_info padisah = shopArrayList.get(i);
-        padisahIsim.setText(padisah.getIsim());
-        padisahSure.setText(padisah.get_bilgi());
+        shop_info shop = shopArrayList.get(i);
+        shopIsim.setText(shop.getIsim());
+        shopUcret.setText(shop.get_bilgi());
 
         myUser=myAuth.getCurrentUser();
 
@@ -97,7 +97,7 @@ public class ShopAdapter extends BaseAdapter {
 
 
 
-                myData.put(String.valueOf(Counter),padisah);
+                myData.put(String.valueOf(Counter),shop);
                 Counter++;
                 myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").updateChildren(myData).addOnCompleteListener(this_act, new OnCompleteListener<Void>() {
                     @Override
@@ -136,8 +136,8 @@ public class ShopAdapter extends BaseAdapter {
         String urlImage = "https://firebasestorage.googleapis.com/v0/b/fir-71256.appspot.com/o/2610090_810x458.jpeg?alt=media&token=9de3dd5f-afc0-4c07-8c95-c67ddf071c51";
 
         Glide.with(this.this_act)
-                .load(urlImage)
-                .into(padisaImage);
+                .load(shop.get_url())
+                .into(shopImage);
 
         return view;
     }

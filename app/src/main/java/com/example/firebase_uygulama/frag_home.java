@@ -70,18 +70,15 @@ public class frag_home extends Fragment {
         View view=inflater.inflate(R.layout.fragment_frag_home, container, false);
 
         liste = (ListView) view.findViewById(R.id.list_shop);
-        shops.add(new shop_info("I. Osman", "27 yıl"));
-        shops.add(new shop_info("II. Osman", "28 yıl"));
-        shops.add(new shop_info("III. Osman", "29 yıl"));
-        shops.add(new shop_info("I. Osman", "27 yıl"));
-        shops.add(new shop_info("II. Osman", "28 yıl"));
-        shops.add(new shop_info("III. Osman", "29 yıl"));
-        shops.add(new shop_info("I. Osman", "27 yıl"));
-        shops.add(new shop_info("II. Osman", "28 yıl"));
-        shops.add(new shop_info("III. Osman", "29 yıl"));
-        shops.add(new shop_info("I. Osman", "27 yıl"));
-        shops.add(new shop_info("II. Osman", "28 yıl"));
-        shops.add(new shop_info("III. Osman", "29 yıl"));
+        shops.add(new shop_info("Antakya Usulü Tavuk Döner Dürüm", "40 tl","https://cdn.getiryemek.com/products/1650546128813_500x375.jpeg"));
+        shops.add(new shop_info("Antakya Usulü Zurna Tavuk Döner Dürüm", "43 tl","https://cdn.getiryemek.com/restaurants/1617702222494_1125x522.jpeg"));
+        shops.add(new shop_info("Sultan Lokması(Tavuk Dönerden)", "45 tl","https://cdn.getiryemek.com/products/1650546139604_500x375.jpeg"));
+        shops.add(new shop_info("Sultan Lokması(Et Dönerden)", "50 tl","https://cdn.getiryemek.com/products/1650546139604_500x375.jpeg"));
+        shops.add(new shop_info("Antakya Usulü Et Döner Dürüm", "45 tl","https://cdn.getiryemek.com/products/1650546128813_500x375.jpeg"));
+        shops.add(new shop_info("Pilav Üstü Tavuk Döner", "48 tl","https://cdn.getiryemek.com/products/1650546128813_500x375.jpeg"));
+        shops.add(new shop_info("İskender (Tavuk Dönerden)", "48 tl","https://cdn.getiryemek.com/products/1650546128813_500x375.jpeg"));
+        shops.add(new shop_info("Tavuk Döner", "48 tl","https://cdn.getiryemek.com/products/1650546128813_500x375.jpeg"));
+        shops.add(new shop_info("Patates Kızartması", "25 tl","https://cdn.getiryemek.com/products/1621514360915_500x375.jpeg"));
 
         ShopAdapter shopAdapter = new ShopAdapter(this.getActivity(), shops);
 
