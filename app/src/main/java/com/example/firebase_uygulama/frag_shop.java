@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -92,16 +93,27 @@ public class frag_shop extends Fragment {
         Arrays.fill(Sepetim, "");
         View view = inflater.inflate(R.layout.fragment_frag_shop, container, false);
         siparisBtn=view.findViewById(R.id.siparisbtn);
+
+        ListView listemiz=(ListView) view.findViewById(R.id.list_sepet);
+
         siparisBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getContext(),order.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.anim2,R.anim.anim3);
+                if (Sepetim[0]!="") {
+                    myReference.child("Kullanicilar").child(myUser.getUid()).child("sepet").removeValue();
+                    getActivity().finish();
+                    startActivity(getActivity().getIntent());
+
+                    Intent intent= new Intent(getContext(),order.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.anim2,R.anim.anim3);
+                }
+                else
+                    Toast.makeText(getContext(), "sepetinize ürün eklemelisiniz", Toast.LENGTH_SHORT).show();
+
 
             }
         });
-        ListView listemiz=(ListView) view.findViewById(R.id.list_sepet);
 
         myAuth=FirebaseAuth.getInstance();
         myReference= FirebaseDatabase.getInstance().getReference();

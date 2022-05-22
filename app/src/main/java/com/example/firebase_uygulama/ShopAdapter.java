@@ -103,7 +103,7 @@ public class ShopAdapter extends BaseAdapter {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(this_act,"Kayıt tamamlandı",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this_act,"Sepete eklendi",Toast.LENGTH_SHORT).show();
                             Log.d("TAG", "başarılı");
                         }
                         else{
@@ -118,7 +118,6 @@ public class ShopAdapter extends BaseAdapter {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(this_act,"Kayıt tamamlandı",Toast.LENGTH_SHORT).show();
                             Log.d("TAG", "başarılı");
                         }
                         else{
